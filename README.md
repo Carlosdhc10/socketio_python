@@ -33,5 +33,48 @@ La comunicación entre el cliente y el servidor se maneja de la siguiente manera
 ### 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
+https://github.com/Carlosdhc10/socketio_python.git
 cd tu_repositorio
+```
+
+### 2. Crear un entorno virtual y activar:
+
+```bash
+python -m venv venv
+# En Windows
+venv\Scripts\activate
+# En macOS/Linux
+source venv/bin/activate
+```
+
+### 3. Instalar las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Ejecutar la aplicación:
+
+```bash
+python app.py
+```
+Esto iniciará el servidor en http://127.0.0.1:5000. 🌐
+
+## Archivos importantes 📂:
+- app.py: El archivo principal que contiene el servidor Flask y la configuración de Socket.IO.
+- templates/index.html: El archivo HTML para el frontend de la aplicación, que se comunica con el servidor mediante Socket.IO.
+- .gitignore: Lista de archivos y carpetas que no deben ser seguidos por Git.
+
+## Contribución 💡
+Si quieres contribuir a este proyecto, por favor sigue los siguientes pasos:
+
+1. Forkea el repositorio.
+2. Crea una nueva rama (git checkout -b nueva-rama).
+3. Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
+4. Empuja tus cambios a tu repositorio (git push origin nueva-rama).
+5. Abre un Pull Request en el repositorio principal.
+
+## Licencia 📜
+Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE para más detalles. ⚖️
+
+
