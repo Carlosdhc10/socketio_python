@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Chat</title>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script> <!-- Actualiza a una versión compatible -->
+</head>
+<body>
+    <h1>Chat en Tiempo Real</h1>
+    <input id="message" type="text" placeholder="Escribe tu mensaje aquí...">
+    <button onclick="sendMessage()">Enviar</button>
+    <ul id="messages"></ul>
+
+    <script>
+        // Conectar al servidor en la URL que está corriendo Flask y Socket.IO
+        const socket = io("http://127.0.0.1:5000", {
+            transports: ["websocket"], // Asegúrate de que se use WebSocket para mejor rendimiento
+        });
+
+        socket.on("connect", () => {
+            console.log("Conectado al servidor");
+        });
+
+        socket.on("message", (data) => {
+            const messages = document.getElementById("messages");
+            const li = document.createElement("li");
+            li.textContent = data;
+            messages.appendChild(li);
+        });
+
+        function sendMessage() {
+            const input = document.getElementById("message");
+            const message = input.value;
+            if (message) {
+                socket.send(message);
+                input.value = "";  // Limpiar el campo después de enviar el mensaje
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Archivos de bases de datos
+*.db
+*.sqlite3
+
+# Archivos de configuración específicos de OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos generados por Flask
+instance/
+*.pid
+*.log
+
+# Archivos de Socket.IO
+*.sock
+
